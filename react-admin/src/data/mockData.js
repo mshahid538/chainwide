@@ -1,5 +1,22 @@
 import { tokens } from "../theme";
 
+export const mockDataTopApiEndpoints =[
+  {
+    id: 1,
+    apiEndPoint: "/v1/order/order_details",
+    numberOfRequests: 45012,
+    httpMethod: "GET",
+    trafficPercent: 38
+  },
+  {
+    id: 2,
+    apiEndPoint: "/v2/products/product_details",
+    numberOfRequests: 35011,
+    httpMethod: "POST",
+    trafficPercent: 25
+  },
+];
+
 export const mockDataTeam = [
   {
     id: 1,
@@ -268,52 +285,46 @@ export const mockDataInvoices = [
 
 export const mockTransactions = [
   {
-    txId: "01e4dsa",
-    user: "johndoe",
+    txId: "Brute Force Authentication",
+    user: "IP: 141.51.123.1",
     date: "2021-09-01",
-    cost: "43.95",
+    cost: "OWASP API5",
   },
   {
-    txId: "0315dsaa",
-    user: "jackdower",
+    txId: "Injection",
+    user: "IP: 192.168.4.1",
     date: "2022-04-01",
-    cost: "133.45",
+    cost: "OWASP API8",
   },
   {
-    txId: "01e4dsa",
-    user: "aberdohnny",
+    txId: "Broken Authentication",
+    user: "IP: 622.11.151.1",
     date: "2021-09-01",
-    cost: "43.95",
+    cost: "OWASP API2",
   },
   {
-    txId: "51034szv",
-    user: "goodmanave",
+    txId: "Query Parameter Fuzzing",
+    user: "IP: 72.878.909.1",
     date: "2022-11-05",
-    cost: "200.95",
+    cost: "OWASP API4",
   },
   {
-    txId: "0a123sb",
-    user: "stevebower",
+    txId: "PII",
+    user: "IP: 98.235.90.23",
     date: "2022-11-02",
-    cost: "13.55",
+    cost: "PII",
   },
   {
-    txId: "01e4dsa",
-    user: "aberdohnny",
+    txId: "Excessive Errors",
+    user: "IP: 57.87.98.32",
     date: "2021-09-01",
-    cost: "43.95",
+    cost: "OWASP API7",
   },
   {
-    txId: "120s51a",
-    user: "wootzifer",
+    txId: "No Rate Limit",
+    user: "IP: 26.52.772.66",
     date: "2019-04-15",
-    cost: "24.20",
-  },
-  {
-    txId: "0315dsaa",
-    user: "jackdower",
-    date: "2022-04-01",
-    cost: "133.45",
+    cost: "OWASP API6",
   },
 ];
 
