@@ -15,6 +15,7 @@ import ReceiptOutlinedIcon from '@mui/icons-material/ReceiptOutlined';
 import HelpOutlinedIcon from '@mui/icons-material/HelpOutlineOutlined';
 import PieChartOutlinedIcon from '@mui/icons-material/PieChartOutlineOutlined';
 import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined';
+import CachedIcon from '@mui/icons-material/Cached';
 
 
 const Item = ({ title, to, icon, selected, setSelected }) => {
@@ -130,8 +131,15 @@ const Item = ({ title, to, icon, selected, setSelected }) => {
                 color={colors.grey[300]}
                 sx={{ m: "15px 0 5px 20px" }}
               >
-                Data
+                Discovery
               </Typography>
+              <Item
+                title="API Discovery"
+                to="/apidiscovery"
+                icon={<CachedIcon />}
+                selected={selected}
+                setSelected={setSelected}
+              />
               <Item
                 title="Manage Team"
                 to="/team"
