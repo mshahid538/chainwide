@@ -12,6 +12,7 @@ import GeographyChart from "../../components/GeographyChart";
 import BarChart from "../../components/BarChart";
 import StatBox from "../../components/StatBox";
 import ApiDetailList from "../../components/apiDetails/apiDetails";
+import RiskDetails from "../../components/apiDetails/RiskDetails";
 import ProgressCircle from "../../components/ProgressCircle";
 import ReportIcon from '@mui/icons-material/Report';
 import GppBadIcon from '@mui/icons-material/GppBad';
@@ -21,6 +22,7 @@ import ApiDiscoveryHostnameList from "../apidiscoveryHostnameList";
 import PieChart from "../../components/PieChart";
 import * as React from 'react';
 import { DataGrid } from '@mui/x-data-grid';
+import ApiTabs from "../../components/apiDetails/ApiTabs";
 
 const ApiDiscoveryDetails = () => {
   const theme = useTheme();
@@ -164,10 +166,10 @@ const ApiDiscoveryDetails = () => {
             fontWeight="600"
             sx={{ marginBottom: "15px" }}
           >
-            Header Details
+            Error Details
           </Typography>
           <Box height="250px">
-            <ApiDetailList isDashboard={true} />
+            <RiskDetails isDashboard={true} />
           </Box>
         </Box>
 
@@ -181,10 +183,10 @@ const ApiDiscoveryDetails = () => {
             fontWeight="600"
             sx={{ marginBottom: "15px" }}
           >
-            Error Details
+            Header Details
           </Typography>
           <Box height="250px">
-            <ApiDetailList isDashboard={true} />
+            <ApiTabs isDashboard={true} />
           </Box>
         </Box>
 

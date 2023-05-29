@@ -1,5 +1,50 @@
 import { tokens } from "../theme";
 
+export const mockDataApiDetailsRequestHeaders =[
+  {
+    id: 1,
+    header: "Host",
+    count: "278",
+    frequency: "98%",
+    commonValue: "titan.ebay.com"
+  },
+  {
+    id: 2,
+    header: "Content-Type",
+    count: "178",
+    frequency: "100%",
+    commonValue: "json"
+  },
+  {
+    id: 3,
+    header: "X-Authentication",
+    count: "28",
+    frequency: "90%",
+    commonValue: "7xx8x"
+  },
+  {
+    id: 4,
+    header: "Content Length",
+    count: "128",
+    frequency: "100%",
+    commonValue: "271"
+  },
+  {
+    id: 5,
+    header: "X-Authentication",
+    count: "28",
+    frequency: "90%",
+    commonValue: "7xx8x"
+  },
+  {
+    id: 6,
+    header: "URL",
+    count: "278",
+    frequency: "100%",
+    commonValue: "ebay.com/order/order_details/"
+  },
+]
+
 export const mockDataApiDetails =[
   {
     id:1,
