@@ -1,14 +1,29 @@
 import { tokens } from "../theme";
 
+export const mockDataApiDetails =[
+  {
+    id:1,
+    hostHeader: "ipay.ebay.com",
+    contentLength: "541",
+    userAgent: "Mozilla UA",
+    httpMethod: "GET",
+    url: "ebay.com/v1/item_details/5325",
+    posture: "2",
+    riskScore: "5"
+
+  }
+]
+
 export const mockDataApiDiscoveryHostnameList =[
   {
     id: 1,
     hostname: "ebay.com",
     basepath: "/v1/item_details/5325",
-    dateFirstSeen: 'May 5, 2023',
+    dateFirstSeen: '05/02, 2023',
     format: "JSON, XML",
     requestsInLast24Hours: '2301',
-    totalErrors: 321
+    totalErrors: 321,
+    details: "Details"
   },
   {
     id: 2,
@@ -23,7 +38,7 @@ export const mockDataApiDiscoveryHostnameList =[
     id: 3,
     hostname: "static.ebay.com",
     basepath: "/v2/oath/",
-    dateFirstSeen: 'May 15, 2023',
+    dateFirstSeen: '05/04, 2023',
     format: "JSON",
     requestsInLast24Hours: '5432',
     totalErrors: 342
@@ -32,7 +47,7 @@ export const mockDataApiDiscoveryHostnameList =[
     id: 4,
     hostname: "www1.ebay.com",
     basepath: "/v1/ssjohn/tasks/6x6231",
-    dateFirstSeen: 'May 1, 2023',
+    dateFirstSeen: '05/01, 2023',
     format: "JSON, XML",
     requestsInLast24Hours: '953',
     totalErrors: 684
@@ -41,7 +56,7 @@ export const mockDataApiDiscoveryHostnameList =[
     id: 5,
     hostname: "ebay.com",
     basepath: "/sessions/5523",
-    dateFirstSeen: 'May 7, 2023',
+    dateFirstSeen: '05/07, 2023',
     format: "JSON, XML",
     requestsInLast24Hours: '4223',
     totalErrors: 483
@@ -50,7 +65,7 @@ export const mockDataApiDiscoveryHostnameList =[
     id: 6,
     hostname: "v2.ebay.com",
     basepath: "/equipment/111/cycles/",
-    dateFirstSeen: 'May 12, 2023',
+    dateFirstSeen: '05/12, 2023',
     format: "JSON, XML",
     requestsInLast24Hours: '912',
     totalErrors: 786
@@ -289,7 +304,7 @@ export const mockDataInvoices = [
     email: "cerseilannister@gmail.com",
     cost: "1.24",
     phone: "(421)314-2288",
-    date: "06/15/2021",
+    date: "05/15/2021",
   },
   {
     id: 3,
@@ -438,168 +453,222 @@ export const mockPieData = [
 
 export const mockLineData = [
   {
-    id: "japan",
-    color: tokens("dark").greenAccent[500],
-    data: [
+    "id": "5xx",
+    "color": "hsl(340, 70%, 50%)",
+    "data": [
       {
-        x: "plane",
-        y: 101,
+        "x": "05/01",
+        "y": 145
       },
       {
-        x: "helicopter",
-        y: 75,
+        "x": "05/02",
+        "y": 151
       },
       {
-        x: "boat",
-        y: 36,
+        "x": "05/03",
+        "y": 19
       },
       {
-        x: "train",
-        y: 216,
+        "x": "05/04",
+        "y": 140
       },
       {
-        x: "subway",
-        y: 35,
+        "x": "05/05",
+        "y": 189
       },
       {
-        x: "bus",
-        y: 236,
+        "x": "05/06",
+        "y": 202
       },
       {
-        x: "car",
-        y: 88,
+        "x": "05/07",
+        "y": 1143
       },
       {
-        x: "moto",
-        y: 232,
+        "x": "05/08",
+        "y": 222
       },
       {
-        x: "bicycle",
-        y: 281,
+        "x": "05/09",
+        "y": 247
       },
       {
-        x: "horse",
-        y: 1,
+        "x": "05/10",
+        "y": 282
       },
       {
-        x: "skateboard",
-        y: 35,
+        "x": "05/11",
+        "y": 105
       },
       {
-        x: "others",
-        y: 14,
-      },
-    ],
+        "x": "05/12",
+        "y": 208
+      }
+    ]
   },
   {
-    id: "france",
-    color: tokens("dark").blueAccent[300],
-    data: [
+    "id": "4xx",
+    "color": "hsl(192, 70%, 50%)",
+    "data": [
       {
-        x: "plane",
-        y: 212,
+        "x": "05/01",
+        "y": 95
       },
       {
-        x: "helicopter",
-        y: 190,
+        "x": "05/02",
+        "y": 116
       },
       {
-        x: "boat",
-        y: 270,
+        "x": "05/03",
+        "y": 79
       },
       {
-        x: "train",
-        y: 9,
+        "x": "05/04",
+        "y": 39
       },
       {
-        x: "subway",
-        y: 75,
+        "x": "05/05",
+        "y": 257
       },
       {
-        x: "bus",
-        y: 175,
+        "x": "05/06",
+        "y": 299
       },
       {
-        x: "car",
-        y: 33,
+        "x": "05/07",
+        "y": 80
       },
       {
-        x: "moto",
-        y: 189,
+        "x": "05/08",
+        "y": 287
       },
       {
-        x: "bicycle",
-        y: 97,
+        "x": "05/09",
+        "y": 203
       },
       {
-        x: "horse",
-        y: 87,
+        "x": "05/10",
+        "y": 235
       },
       {
-        x: "skateboard",
-        y: 299,
+        "x": "05/11",
+        "y": 153
       },
       {
-        x: "others",
-        y: 251,
-      },
-    ],
+        "x": "05/12",
+        "y": 41
+      }
+    ]
   },
   {
-    id: "us",
-    color: tokens("dark").redAccent[200],
-    data: [
+    "id": "3xx",
+    "color": "hsl(154, 10%, 80%)",
+    "data": [
       {
-        x: "plane",
-        y: 191,
+        "x": "05/01",
+        "y": 181
       },
       {
-        x: "helicopter",
-        y: 136,
+        "x": "05/02",
+        "y": 182
       },
       {
-        x: "boat",
-        y: 91,
+        "x": "05/03",
+        "y": 114
       },
       {
-        x: "train",
-        y: 190,
+        "x": "05/04",
+        "y": 245
       },
       {
-        x: "subway",
-        y: 211,
+        "x": "05/05",
+        "y": 226
       },
       {
-        x: "bus",
-        y: 152,
+        "x": "05/06",
+        "y": 241
       },
       {
-        x: "car",
-        y: 189,
+        "x": "05/07",
+        "y": 121
       },
       {
-        x: "moto",
-        y: 152,
+        "x": "05/08",
+        "y": 258
       },
       {
-        x: "bicycle",
-        y: 8,
+        "x": "05/09",
+        "y": 182
       },
       {
-        x: "horse",
-        y: 197,
+        "x": "05/10",
+        "y": 115
       },
       {
-        x: "skateboard",
-        y: 107,
+        "x": "05/11",
+        "y": 110
       },
       {
-        x: "others",
-        y: 170,
-      },
-    ],
+        "x": "05/12",
+        "y": 150
+      }
+    ]
   },
-];
+  {
+    "id": "2xx",
+    "color": "hsl(104, 70%, 50%)",
+    "data": [
+      {
+        "x": "05/01",
+        "y": 1024
+      },
+      {
+        "x": "05/02",
+        "y": 1159
+      },
+      {
+        "x": "05/03",
+        "y": 1040
+      },
+      {
+        "x": "05/04",
+        "y": 1218
+      },
+      {
+        "x": "05/05",
+        "y": 1199
+      },
+      {
+        "x": "05/06",
+        "y": 1285
+      },
+      {
+        "x": "05/07",
+        "y": 93
+      },
+      {
+        "x": "05/08",
+        "y": 935
+      },
+      {
+        "x": "05/09",
+        "y": 1090
+      },
+      {
+        "x": "05/10",
+        "y": 1235
+      },
+      {
+        "x": "05/11",
+        "y": 1216
+      },
+      {
+        "x": "05/12",
+        "y": 1119
+      }
+    ]
+  }
+]
 
 export const mockGeographyData = [
   {

@@ -50,16 +50,14 @@ const LineChart = ({ isCustomLineColors = false, isDashboard = false }) => {
         type: "linear",
         min: "auto",
         max: "auto",
-        stacked: true,
+        stacked: false,
         reverse: false,
       }}
       yFormat=" >-.2f"
-      curve="catmullRom"
       axisTop={null}
       axisRight={null}
       axisBottom={{
-        orient: "bottom",
-        tickSize: 0,
+        tickSize: 5,
         tickPadding: 5,
         tickRotation: 0,
         legend: isDashboard ? undefined : "transportation", // added
@@ -67,8 +65,6 @@ const LineChart = ({ isCustomLineColors = false, isDashboard = false }) => {
         legendPosition: "middle",
       }}
       axisLeft={{
-        orient: "left",
-        tickValues: 5, // added
         tickSize: 3,
         tickPadding: 5,
         tickRotation: 0,
@@ -78,11 +74,12 @@ const LineChart = ({ isCustomLineColors = false, isDashboard = false }) => {
       }}
       enableGridX={false}
       enableGridY={false}
-      pointSize={8}
+      pointSize={2}
       pointColor={{ theme: "background" }}
       pointBorderWidth={2}
       pointBorderColor={{ from: "serieColor" }}
       pointLabelYOffset={-12}
+      enableCrosshair={false}
       useMesh={true}
       legends={[
         {

@@ -1,77 +1,82 @@
-import { Box, Button } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import { tokens } from "../../theme";
-import { mockDataApiDiscoveryHostnameList } from "../../data/mockData";
-import Header from "../../components/Header";
+import { mockDataApiDetails } from "../../data/mockData";
 import { useTheme } from "@mui/material";
 import { useNavigate, Link } from 'react-router-dom';
 // on your component:
 
-const ApiDiscoveryHostnameList = () => {
+const ApiDetailList = () => {
   const theme = useTheme();
-  
   const colors = tokens(theme.palette.mode);
 
   const columns = [
     {
-      field: "hostname",
-      headerName: "Hostname",
-      flex: 0.5,
-      cellClassName: "hostname-column--cell",
-      headerAlign: "center",
-      align: 'center'
-    },
-    {
-      field: "basepath",
-      headerName: "Base path",
-      headerAlign: "center",
-      align: "center",
-      flex: 1,
-    },
-    {
-      field: "dateFirstSeen",
-      headerName: "Date First Seen",
+      field: "hostHeader",
+      headerName: "Host header",
       flex: 0.5,
       headerAlign: "center",
       align: 'center'
     },
     {
-      field: "format",
-      headerName: "Format",
+      field: "userAgent",
+      headerName: "User Agent",
       flex: 0.5,
       headerAlign: "center",
       align: 'center'
     },
     {
-      field: "requestsInLast24Hours",
-      headerName: "Requests in Last 24 Hours",
+      field: "httpMethod",
+      headerName: "HTTP Method",
       flex: 0.5,
       headerAlign: "center",
       align: 'center'
     },
     {
-      field: "totalErrors",
-      headerName: "Total Errors",
+      field: "url",
+      headerName: "URL",
+      flex: 0.5,
+      headerAlign: "center",
+      align: 'center'
+    },
+    {
+      field: "posture",
+      headerName: "Posture",
       flex: 0.5,
       headerAlign: "center",
       headerAlign: "center",
       align: 'center'
     },
     {
-      field: "details",
-      headerName: "Details",
+      field: "riskScore",
+      headerName: "Risk",
       flex: 0.5,
       headerAlign: "center",
       align: 'center',
       renderCell: ({
-        row: { details } }) => {
+        row: { riskScore } }) => {
           return (
-            <Box display="flex" justifyContent="end" mt="20px">
-            <Link to={'/apidetails'}>
-              <Button type="submit" color="secondary" variant="contained">
-                Details
-              </Button>
-            </Link>
+            <Box
+            width="60%"
+            m="0 auto"
+            p="5px"
+            display="flex"
+            justifyContent="center"
+            backgroundColor={
+                riskScore === "5"
+                ? colors.redAccent[600]
+                : riskScore === "4"
+                ? colors.blueAccent[700]
+                : colors.greenAccent[700]
+            }
+            borderRadius="4px"
+          >
+            {riskScore === "5"}
+            {riskScore === "4"}
+            {riskScore === "3"}
+            <Typography color={colors.grey[100]} sx={{ ml: "5px" }}>
+              {riskScore}
+            </Typography>
           </Box>
           );
         }
@@ -82,7 +87,7 @@ const ApiDiscoveryHostnameList = () => {
     <Box m="20px">
       <Box
         m="40px 0 0 0"
-        height="75vh"
+        height="35vh"
         sx={{
           "& .MuiDataGrid-root": {
             border: "none",
@@ -90,9 +95,9 @@ const ApiDiscoveryHostnameList = () => {
           "& .MuiDataGrid-cell": {
             borderBottom: "none",
           },
-          "& .hostname-column--cell": {
-            color: colors.greenAccent[300],
-          },
+        //   "& .hostname-column--cell": {
+        //     color: colors.greenAccent[300],
+        //   },
           "& .MuiDataGrid-columnHeaders": {
             backgroundColor: colors.blueAccent[700],
             borderBottom: "none",
@@ -113,7 +118,7 @@ const ApiDiscoveryHostnameList = () => {
         }}
       >
         <DataGrid
-          rows={mockDataApiDiscoveryHostnameList}
+          rows={mockDataApiDetails}
           columns={columns}
           components={{ Toolbar: GridToolbar }}
         />
@@ -122,4 +127,4 @@ const ApiDiscoveryHostnameList = () => {
   );
 };
 
-export default ApiDiscoveryHostnameList;
+export default ApiDetailList;
