@@ -38,7 +38,6 @@ const RequestTable = () => {
       align: 'center'
     },
   ];
-
   return (
     <Box m="20px">
       <Box
