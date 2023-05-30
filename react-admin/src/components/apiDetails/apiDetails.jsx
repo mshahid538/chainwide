@@ -87,7 +87,7 @@ const ApiDetailList = () => {
     <Box m="20px">
       <Box
         m="40px 0 0 0"
-        height="35vh"
+        height="25vh"
         sx={{
           "& .MuiDataGrid-root": {
             border: "none",

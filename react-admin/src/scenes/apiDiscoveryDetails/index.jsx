@@ -168,7 +168,7 @@ const ApiDiscoveryDetails = () => {
           >
             Error Details
           </Typography>
-          <Box height="250px">
+          <Box height="150px">
             <RiskDetails isDashboard={true} />
           </Box>
         </Box>
@@ -185,7 +185,7 @@ const ApiDiscoveryDetails = () => {
           >
             Header Details
           </Typography>
-          <Box height="250px">
+          <Box height="550px">
             <ApiTabs isDashboard={true} />
           </Box>
         </Box>

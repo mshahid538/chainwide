@@ -7,6 +7,7 @@ import Box from '@mui/material/Box';
 import { useTheme } from '@emotion/react';
 import { tokens } from '../../theme';
 import RequestTable from './apiComponents/RequestTable';
+import ResponseTable from './apiComponents/ResponseTable';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -56,7 +57,7 @@ const ApiTabs = () => {
         <Tabs value={value} onChange={handleChange} textColor="secondary"  >
           <Tab label="Request" {...a11yProps(0)} />
           <Tab label="Response" {...a11yProps(1)} />
-          <Tab label="Item Three" {...a11yProps(2)} />
+          {/* <Tab label="Item Three" {...a11yProps(2)} /> */}
         </Tabs>
       </Box>
       <TabPanel value={value} index={0}>
@@ -65,10 +66,9 @@ const ApiTabs = () => {
         </Box>
       </TabPanel>
       <TabPanel value={value} index={1}>
-        Item Two
-      </TabPanel>
-      <TabPanel value={value} index={2}>
-        Item Three
+      <Box height="750px">
+              <ResponseTable isDashboard={true} />
+        </Box>
       </TabPanel>
     </Box>
   );

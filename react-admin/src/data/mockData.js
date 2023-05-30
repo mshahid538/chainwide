@@ -1,5 +1,50 @@
 import { tokens } from "../theme";
 
+export const mockDataApiDetailsResponseHeaders =[
+  {
+    id: 1,
+    header: "cache-control",
+    count: "278",
+    frequency: "98%",
+    commonValue: "private, max-age=0"
+  },
+  {
+    id: 2,
+    header: "content-encoding",
+    count: "178",
+    frequency: "100%",
+    commonValue: "br"
+  },
+  {
+    id: 3,
+    header: "content-type",
+    count: "28",
+    frequency: "90%",
+    commonValue: "text/html"
+  },
+  {
+    id: 4,
+    header: "vary",
+    count: "128",
+    frequency: "100%",
+    commonValue: "accept-encoding"
+  },
+  {
+    id: 5,
+    header: "set-cookie",
+    count: "28",
+    frequency: "90%",
+    commonValue: "SID=8823262"
+  },
+  {
+    id: 6,
+    header: "expires",
+    count: "278",
+    frequency: "100%",
+    commonValue: "Tue, 30 May 2023 20:07:00 GMT"
+  },
+]
+
 export const mockDataApiDetailsRequestHeaders =[
   {
     id: 1,
@@ -24,10 +69,10 @@ export const mockDataApiDetailsRequestHeaders =[
   },
   {
     id: 4,
-    header: "Content Length",
+    header: "Cache-Control",
     count: "128",
     frequency: "100%",
-    commonValue: "271"
+    commonValue: "max-age=0"
   },
   {
     id: 5,

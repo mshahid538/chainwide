@@ -1,10 +1,10 @@
 import { Box, Button, Typography } from "@mui/material";
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import { tokens } from "../../../theme";
-import { mockDataApiDetailsRequestHeaders } from "../../../data/mockData";
+import { mockDataApiDetailsResponseHeaders } from "../../../data/mockData";
 import { useTheme } from "@mui/material";
 
-const RequestTable = () => {
+const ResponseTable = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
 
@@ -38,6 +38,7 @@ const RequestTable = () => {
       align: 'center'
     },
   ];
+
   return (
     <Box>
       <Box
@@ -73,7 +74,7 @@ const RequestTable = () => {
         }}
       >
         <DataGrid
-          rows={mockDataApiDetailsRequestHeaders}
+          rows={mockDataApiDetailsResponseHeaders}
           columns={columns}
           components={{ Toolbar: GridToolbar }}
         />
@@ -82,4 +83,4 @@ const RequestTable = () => {
   );
 };
 
-export default RequestTable;
+export default ResponseTable;
