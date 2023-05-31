@@ -84,7 +84,7 @@ const ApiDiscovery = () => {
           >
             Unidentified APIs
           </Typography>
-          <Box height="450px">
+          <Box height="650px">
             <ApiDiscoveryHostnameList isDashboard={true} />
           </Box>
         </Box>
