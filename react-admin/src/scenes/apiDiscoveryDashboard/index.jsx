@@ -88,6 +88,23 @@ const ApiDiscovery = () => {
             <ApiDiscoveryHostnameList isDashboard={true} />
           </Box>
         </Box>
+
+        {/* <Box
+         marginTop={'20px'}
+         backgroundColor={colors.primary[400]}
+         padding="30px"      
+      >
+          <Typography
+            variant="h5"
+            fontWeight="600"
+            sx={{ marginBottom: "15px" }}
+          >
+            Recent Changes API
+          </Typography>
+          <Box height="650px">
+            <ApiDiscoveryHostnameList isDashboard={true} />
+          </Box>
+        </Box> */}
     </Box>
 
     );

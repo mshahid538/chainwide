@@ -11,8 +11,7 @@ import LineChart from "../../components/LineChart";
 import GeographyChart from "../../components/GeographyChart";
 import BarChart from "../../components/BarChart";
 import StatBox from "../../components/StatBox";
-import ApiDetailList from "../../components/apiDetails/apiDetails";
-import RiskDetails from "../../components/apiDetails/RiskDetails";
+import RiskDetails from "../../components/apiDetails/riskDetails";
 import ProgressCircle from "../../components/ProgressCircle";
 import ReportIcon from '@mui/icons-material/Report';
 import GppBadIcon from '@mui/icons-material/GppBad';
@@ -153,26 +152,9 @@ const ApiDiscoveryDetails = () => {
             Risk Details
           </Typography>
           <Box height="250px">
-            <ApiDetailList isDashboard={true} />
-          </Box>
-        </Box>
-        <Box
-         marginTop={'20px'}
-         backgroundColor={colors.primary[400]}
-         padding="30px"      
-      >
-          <Typography
-            variant="h5"
-            fontWeight="600"
-            sx={{ marginBottom: "15px" }}
-          >
-            Error Details
-          </Typography>
-          <Box height="150px">
             <RiskDetails isDashboard={true} />
           </Box>
         </Box>
-
         <Box
          marginTop={'20px'}
          backgroundColor={colors.primary[400]}

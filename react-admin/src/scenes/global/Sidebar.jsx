@@ -140,7 +140,7 @@ const Item = ({ title, to, icon, selected, setSelected }) => {
                 selected={selected}
                 setSelected={setSelected}
               />
-              <Item
+              {/* <Item
                 title="Manage Team"
                 to="/team"
                 icon={<PeopleOutlinedIcon />}
@@ -218,7 +218,7 @@ const Item = ({ title, to, icon, selected, setSelected }) => {
                 icon={<MapOutlinedIcon />}
                 selected={selected}
                 setSelected={setSelected}
-              />
+              /> */}
             </Box>
           </Menu>
         </ProSidebar>

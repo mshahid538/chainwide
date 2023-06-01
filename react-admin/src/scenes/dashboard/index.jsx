@@ -61,8 +61,8 @@ const Dashboard = () => {
           justifyContent="center"
         >
           <StatBox
-            title="12,361"
-            subtitle="Outdated APIs"
+            title="6"
+            subtitle="Unidentified APIs"
             progress="0.75"
             increase="+14%"
             icon={
@@ -80,7 +80,7 @@ const Dashboard = () => {
           justifyContent="center"
         >
           <StatBox
-            title="431,225"
+            title="7"
             subtitle="OWASP 10 Attacks"
             progress="0.50"
             increase="+21%"
@@ -99,7 +99,7 @@ const Dashboard = () => {
           justifyContent="center"
         >
           <StatBox
-            title="32,441"
+            title="7"
             subtitle="Recent Alerts"
             progress="0.30"
             increase="+5%"
@@ -156,7 +156,7 @@ const Dashboard = () => {
                 fontWeight="bold"
                 color={colors.greenAccent[500]}
               >
-                59,342
+                593
               </Typography>
             </Box>
           </Box>
@@ -243,6 +243,7 @@ const Dashboard = () => {
           gridRow="span 2"
           backgroundColor={colors.primary[400]}
           padding="30px"
+          height="400px"
         >
           <Typography
             variant="h5"
@@ -251,7 +252,7 @@ const Dashboard = () => {
           >
             Top Hosts
           </Typography>
-          <Box height="200px">
+          <Box height="300px">
             <TopApiHosts isDashboard={true} />
           </Box>
         </Box>
