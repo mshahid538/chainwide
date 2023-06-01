@@ -3,14 +3,50 @@ import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import { tokens } from "../../theme";
 import { mockDataApiDiscoveryHostnameList } from "../../data/mockData";
 import Header from "../../components/Header";
+import { InputLabel } from "@mui/material";
+import Select from "@mui/material/Select/Select";
+import OutlinedInput from "@mui/material/OutlinedInput/OutlinedInput";
+import { MenuProps } from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem/MenuItem";
 import { useTheme } from "@mui/material";
 import { useNavigate, Link } from 'react-router-dom';
+import FormControl from '@mui/material/FormControl';
+import * as React from 'react';
 // on your component:
 
 const ApiDiscoveryHostnameList = () => {
   const theme = useTheme();
-  
+  const ITEM_HEIGHT = 48;
+  const ITEM_PADDING_TOP = 8; 
+
   const colors = tokens(theme.palette.mode);
+  const names =[
+    'Register',
+    'Block Request',
+    'Block IP',
+    'Block User',
+    'Alert Only'
+  ];
+
+  const MenuProps = {
+    PaperProps: {
+      style: {
+        maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
+        width: 250,
+      },
+    },
+  };
+
+  const [personName, setPersonName] = React.useState([]);
+
+  function getStyles(name, personName, theme) {
+    return {
+      fontWeight:
+        personName.indexOf(name) === -1
+          ? theme.typography.fontWeightRegular
+          : theme.typography.fontWeightMedium,
+    };
+  }
 
   const columns = [
     {
@@ -66,7 +102,11 @@ const ApiDiscoveryHostnameList = () => {
       renderCell: ({
         row: { details } }) => {
           return (
-            <Box display="flex" justifyContent="end" mt="20px">
+            <Box width="60%"
+            m="0 auto"
+            p="5px"
+            display="flex"
+            justifyContent="center">
             <Link to={'/apidetails'}>
               <Button type="submit" color="secondary" variant="contained">
                 Details
@@ -76,6 +116,42 @@ const ApiDiscoveryHostnameList = () => {
           );
         }
     },
+    {
+      field: "Actions",
+      headerName: "Actions",
+      flex: 0.5,
+      headerAlign: "center",
+      align: 'center',
+      renderCell :({
+        row: { actions }}) => {
+          return (
+            <Box>
+              <FormControl sx={{width: 100 }}>
+              <InputLabel id="demo-multiple-name-label">Action</InputLabel>
+              <Select
+                labelId="demo-multiple-name-label"
+                id="demo-multiple-name"
+                multiple
+                value={personName}
+                input={<OutlinedInput label="Name" />}
+                //MenuProps={MenuProps}
+              >
+                {names.map((name) => (
+                  <MenuItem
+                    key={name}
+                    value={name}
+                    style={getStyles(name, personName, theme)}
+                  >
+                    {name}
+                  </MenuItem>
+                ))}
+              </Select>
+              </FormControl>
+            </Box>
+          )
+        }
+    }
+    
   ];
 
   return (

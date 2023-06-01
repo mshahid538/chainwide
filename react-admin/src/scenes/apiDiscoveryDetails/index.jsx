@@ -64,7 +64,7 @@ const ApiDiscoveryDetails = () => {
     <Box m="20px">
       {/* HEADER */}
       <Box display="flex" justifyContent="space-between" alignItems="center">
-        <Header title="API Details" subtitle="List of registered and unregistered API that our system identified" />
+        <Header title="API Details" subtitle="Granular view of the selected API" />
       </Box>
       <Box
         display="grid"

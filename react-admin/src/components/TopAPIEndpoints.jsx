@@ -2,7 +2,9 @@ import { Box, Typography, useTheme} from "@mui/material";
 import { DataGrid } from "@mui/x-data-grid";
 import { tokens } from "../theme";
 import { mockDataTopApiEndpoints } from "../data/mockData";
-import Header from "../components/Header";
+import { useNavigate, Link } from 'react-router-dom';
+import { Button } from "@mui/material";
+
 
 const TopAPIEndpoints = () => {
   const theme = useTheme();
@@ -17,15 +19,18 @@ const TopAPIEndpoints = () => {
     },
     {
       field: "numberOfRequests",
+      flex: 0.5,
       headerName: "Requests Count",
       type: "number",
-      headerAlign: "center"
+      headerAlign: "center",
+      align: "center"
     },
     {
       field: "httpMethod",
       headerName: "HTTP Method",
       flex: 1,
       headerAlign: "center",
+      align: "center",
       renderCell: ({ row: { httpMethod } }) => {
         return (
           <Box
@@ -38,7 +43,7 @@ const TopAPIEndpoints = () => {
               httpMethod === "GET"
                 ? colors.greenAccent[600]
                 : httpMethod === "POST"
-                ? colors.greenAccent[700]
+                ? colors.blueAccent[700]
                 : colors.greenAccent[700]
             }
             borderRadius="4px"
@@ -56,8 +61,32 @@ const TopAPIEndpoints = () => {
         field: "trafficPercent",
         headerName: "Traffic %",
         type: "float",
-        headerAlign: "center"
-    }
+        headerAlign: "center",
+        align: "center"
+    },
+    {
+      field: "details",
+      headerName: "Details",
+      flex: 0.5,
+      headerAlign: "center",
+      align: "center",
+      renderCell: ({
+        row: { details } }) => {
+          return (
+            <Box width="60%"
+            m="0 auto"
+            p="5px"
+            display="flex"
+            justifyContent="center">
+            <Link to={'/apidetails'}>
+              <Button type="submit" color="secondary" variant="contained">
+                Details
+              </Button>
+            </Link>
+          </Box>
+          );
+        }
+    },
   ];
 
   return (

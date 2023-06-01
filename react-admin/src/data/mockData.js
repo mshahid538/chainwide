@@ -1,5 +1,32 @@
 import { tokens } from "../theme";
 
+export const mockDataTopHosts=[
+  {
+    id: 1,
+    hostName: "www.ebay.com",
+    numberOfRequests: 1412988,
+    trafficPercent: 75
+  },
+  {
+    id: 2,
+    hostName: "preprod.ebay.com",
+    numberOfRequests: 112811,
+    trafficPercent: 10
+  },
+  {
+    id: 3,
+    hostName: "dev1.ebay.com",
+    numberOfRequests: 108921,
+    trafficPercent: 8
+  },
+  {
+    id: 4,
+    hostName: "preprod-usa.ebay.com",
+    numberOfRequests: 98012,
+    trafficPercent: 3
+  },
+]
+
 export const mockDataApiDetailsResponseHeaders =[
   {
     id: 1,
