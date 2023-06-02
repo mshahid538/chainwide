@@ -17,17 +17,16 @@ function PoliciesModal({ open, handleClose }) {
   const [add, setAnd] = React.useState([]);
 
   const handleAddAnd = () => {
-    setAnd([1]);
+    setAnd([0]);
   };
 
-  const handleSingleAddClose = (index) => {
-    // const data = [...add];
-    // const selectedIndex = data.indexOf(Number(index + 1));
-    // if (selectedIndex > -1) {
-    //   data.splice(Number(selectedIndex), 1);
-    // }
-    // setAnd(data);
-    // console.log("and", add);
+  const handleSingleAddClose = (andItem) => {
+    const data = [...add];
+    const selectedIndex = data.indexOf(Number(andItem));
+    if (selectedIndex > -1) {
+      data.splice(Number(selectedIndex), 1);
+    }
+    setAnd(data);
   };
 
   const handleSingleAdd = (index) => {
@@ -186,7 +185,9 @@ function PoliciesModal({ open, handleClose }) {
                                 <Box className="singleAnd">
                                   <b
                                     className="closeButton"
-                                    onClick={() => handleSingleAddClose(index)}
+                                    onClick={() =>
+                                      handleSingleAddClose(andItem)
+                                    }
                                   >
                                     <CloseIcon />
                                   </b>
