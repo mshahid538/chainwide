@@ -140,13 +140,14 @@ const Item = ({ title, to, icon, selected, setSelected }) => {
                 selected={selected}
                 setSelected={setSelected}
               />
-              {/* <Item
-                title="Manage Team"
-                to="/team"
+               <Item
+                title="Policies"
+                to="/policies"
                 icon={<PeopleOutlinedIcon />}
                 selected={selected}
                 setSelected={setSelected}
               />
+              {/*
               <Item
                 title="Contacts Information"
                 to="/contacts"
