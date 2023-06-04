@@ -1,27 +1,13 @@
-import { Box, Button, IconButton, Typography, useTheme } from "@mui/material";
-import { tokens } from "../../theme";
+import { Box, Typography, useTheme } from "@mui/material";
 import { mockTransactions } from "../../data/mockData";
-import DownloadOutlinedIcon from "@mui/icons-material/UploadFileOutlined";
-import EmailIcon from "@mui/icons-material/Email";
+import { tokens } from "../../theme";
 // import PointOfSaleIcon from "@mui/icons-material/PointOfSale";
 // import PersonAddIcon from "@mui/icons-material/PersonAdd";
-import TrafficIcon from "@mui/icons-material/Traffic";
+import * as React from "react";
 import Header from "../../components/Header";
 import LineChart from "../../components/LineChart";
-import GeographyChart from "../../components/GeographyChart";
-import BarChart from "../../components/BarChart";
-import StatBox from "../../components/StatBox";
-import RiskDetails from "../../components/apiDetails/RiskDetails";
-import ProgressCircle from "../../components/ProgressCircle";
-import ReportIcon from "@mui/icons-material/Report";
-import GppBadIcon from "@mui/icons-material/GppBad";
-import ApiIcon from "@mui/icons-material/Api";
-import TopAPIEndpoints from "../../components/TopAPIEndpoints";
-import ApiDiscoveryHostnameList from "../apidiscoveryHostnameList";
-import PieChart from "../../components/PieChart";
-import * as React from "react";
-import { DataGrid } from "@mui/x-data-grid";
 import ApiTabs from "../../components/apiDetails/ApiTabs";
+import RiskDetails from "../../components/apiDetails/RiskDetails";
 
 const ApiDiscoveryDetails = () => {
   const theme = useTheme();
