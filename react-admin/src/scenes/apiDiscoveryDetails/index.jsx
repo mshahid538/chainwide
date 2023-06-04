@@ -11,59 +11,62 @@ import LineChart from "../../components/LineChart";
 import GeographyChart from "../../components/GeographyChart";
 import BarChart from "../../components/BarChart";
 import StatBox from "../../components/StatBox";
-import RiskDetails from "../../components/apiDetails/riskDetails";
+import RiskDetails from "../../components/apiDetails/RiskDetails";
 import ProgressCircle from "../../components/ProgressCircle";
-import ReportIcon from '@mui/icons-material/Report';
-import GppBadIcon from '@mui/icons-material/GppBad';
-import ApiIcon from '@mui/icons-material/Api';
+import ReportIcon from "@mui/icons-material/Report";
+import GppBadIcon from "@mui/icons-material/GppBad";
+import ApiIcon from "@mui/icons-material/Api";
 import TopAPIEndpoints from "../../components/TopAPIEndpoints";
 import ApiDiscoveryHostnameList from "../apidiscoveryHostnameList";
 import PieChart from "../../components/PieChart";
-import * as React from 'react';
-import { DataGrid } from '@mui/x-data-grid';
+import * as React from "react";
+import { DataGrid } from "@mui/x-data-grid";
 import ApiTabs from "../../components/apiDetails/ApiTabs";
 
 const ApiDiscoveryDetails = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const columns = [
-    { field: 'id', headerName: 'ID', width: 70 },
-    { field: 'firstName', headerName: 'First name', width: 130 },
-    { field: 'lastName', headerName: 'Last name', width: 130 },
+    { field: "id", headerName: "ID", width: 70 },
+    { field: "firstName", headerName: "First name", width: 130 },
+    { field: "lastName", headerName: "Last name", width: 130 },
     {
-      field: 'age',
-      headerName: 'Age',
-      type: 'number',
+      field: "age",
+      headerName: "Age",
+      type: "number",
       width: 90,
     },
     {
-      field: 'fullName',
-      headerName: 'Full name',
-      description: 'This column has a value getter and is not sortable.',
+      field: "fullName",
+      headerName: "Full name",
+      description: "This column has a value getter and is not sortable.",
       sortable: false,
       width: 160,
       valueGetter: (params) =>
-        `${params.row.firstName || ''} ${params.row.lastName || ''}`,
+        `${params.row.firstName || ""} ${params.row.lastName || ""}`,
     },
   ];
-  
+
   const rows = [
-    { id: 1, lastName: 'Snow', firstName: 'Jon', age: 35 },
-    { id: 2, lastName: 'Lannister', firstName: 'Cersei', age: 42 },
-    { id: 3, lastName: 'Lannister', firstName: 'Jaime', age: 45 },
-    { id: 4, lastName: 'Stark', firstName: 'Arya', age: 16 },
-    { id: 5, lastName: 'Targaryen', firstName: 'Daenerys', age: null },
-    { id: 6, lastName: 'Melisandre', firstName: null, age: 150 },
-    { id: 7, lastName: 'Clifford', firstName: 'Ferrara', age: 44 },
-    { id: 8, lastName: 'Frances', firstName: 'Rossini', age: 36 },
-    { id: 9, lastName: 'Roxie', firstName: 'Harvey', age: 65 },
+    { id: 1, lastName: "Snow", firstName: "Jon", age: 35 },
+    { id: 2, lastName: "Lannister", firstName: "Cersei", age: 42 },
+    { id: 3, lastName: "Lannister", firstName: "Jaime", age: 45 },
+    { id: 4, lastName: "Stark", firstName: "Arya", age: 16 },
+    { id: 5, lastName: "Targaryen", firstName: "Daenerys", age: null },
+    { id: 6, lastName: "Melisandre", firstName: null, age: 150 },
+    { id: 7, lastName: "Clifford", firstName: "Ferrara", age: 44 },
+    { id: 8, lastName: "Frances", firstName: "Rossini", age: 36 },
+    { id: 9, lastName: "Roxie", firstName: "Harvey", age: 65 },
   ];
 
   return (
     <Box m="20px">
       {/* HEADER */}
       <Box display="flex" justifyContent="space-between" alignItems="center">
-        <Header title="API Details" subtitle="Granular view of the selected API" />
+        <Header
+          title="API Details"
+          subtitle="Granular view of the selected API"
+        />
       </Box>
       <Box
         display="grid"
@@ -140,41 +143,31 @@ const ApiDiscoveryDetails = () => {
         </Box>
       </Box>
       <Box
-         marginTop={'20px'}
-         backgroundColor={colors.primary[400]}
-         padding="30px"      
+        marginTop={"20px"}
+        backgroundColor={colors.primary[400]}
+        padding="30px"
       >
-          <Typography
-            variant="h5"
-            fontWeight="600"
-            sx={{ marginBottom: "15px" }}
-          >
-            Risk Details
-          </Typography>
-          <Box height="250px">
-            <RiskDetails isDashboard={true} />
-          </Box>
+        <Typography variant="h5" fontWeight="600" sx={{ marginBottom: "15px" }}>
+          Risk Details
+        </Typography>
+        <Box height="250px">
+          <RiskDetails isDashboard={true} />
         </Box>
-        <Box
-         marginTop={'20px'}
-         backgroundColor={colors.primary[400]}
-         padding="30px"      
+      </Box>
+      <Box
+        marginTop={"20px"}
+        backgroundColor={colors.primary[400]}
+        padding="30px"
       >
-          <Typography
-            variant="h5"
-            fontWeight="600"
-            sx={{ marginBottom: "15px" }}
-          >
-            Header Details
-          </Typography>
-          <Box height="550px">
-            <ApiTabs isDashboard={true} />
-          </Box>
+        <Typography variant="h5" fontWeight="600" sx={{ marginBottom: "15px" }}>
+          Header Details
+        </Typography>
+        <Box height="550px">
+          <ApiTabs isDashboard={true} />
         </Box>
-
+      </Box>
     </Box>
-
-    );
+  );
 };
 
 export default ApiDiscoveryDetails;
