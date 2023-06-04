@@ -52,7 +52,7 @@ const ApiTabs = () => {
   };
 
   return (
-    <Box sx={{ width: '100%' }}>
+    <Box sx={{ width: '100%' }}  class="table-container">
       <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
         <Tabs value={value} onChange={handleChange} textColor="secondary"  >
           <Tab label="Request" {...a11yProps(0)} />
@@ -60,16 +60,16 @@ const ApiTabs = () => {
           {/* <Tab label="Item Three" {...a11yProps(2)} /> */}
         </Tabs>
       </Box>
-      <TabPanel value={value} index={0}>
-        <Box height="550px">
+      <TabPanel value={value} index={0} className="table">
+        <Box height="550px" >
               <RequestTable isDashboard={true} />
         </Box>
       </TabPanel>
       <TabPanel value={value} index={1}>
-      <Box height="750px">
+        <Box height="750px" >
               <ResponseTable isDashboard={true} />
         </Box>
-      </TabPanel>
+      </TabPanel> 
     </Box>
   );
 }

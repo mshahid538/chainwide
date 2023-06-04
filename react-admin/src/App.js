@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import Topbar from "./scenes/global/Topbar";
 import Sidebar from "./scenes/global/Sidebar";
 import Dashboard from "./scenes/dashboard";
-import PoliciesDashboard from "./scenes/policies";
+import Team from "./scenes/team";
 import Invoices from "./scenes/invoices";
 import Contacts from "./scenes/contacts";
 import Bar from "./components/BarChart";
@@ -20,6 +20,9 @@ import ApiDiscoveryDetails from "./scenes/apiDiscoveryDetails";
 // import TopAPIEndpoints from "./scenes/topAPI";
 // import Calendar from "./scenes/calendar/calendar";
 import { initializeApp } from "firebase/app";
+import MenuBar from "./components/MenuBar/MenuBar";
+import Footer from "./components/Footer/Footer";
+import Banner from "./components/Banner/Banner";
 
 const firebaseConfig = {
   apiKey: "AIzaSyAS26zmJxZQCseUPf3G1lxAUxbPNtOMe6U",
@@ -39,13 +42,15 @@ function App() {
     <ColorModeContext.Provider value={colorMode}>
       <ThemeProvider theme={theme}>
         <CssBaseline />
+        <MenuBar />
+        {/* <Banner /> */}
         <div className="app">
           <Sidebar isSidebar={isSidebar} />
           <main className="content">
             <Topbar setIsSidebar={setIsSidebar} />
             <Routes>
               <Route path="/" element={<Dashboard />} />
-              <Route path="/policies" element={<PoliciesDashboard />} />
+              <Route path="/team" element={<Team />} />
               <Route path="/contacts" element={<Contacts />} />
               <Route path="/invoices" element={<Invoices />} />
               <Route path="/form" element={<Form />} />
@@ -58,8 +63,11 @@ function App() {
               <Route path="/apidiscovery" element={<ApiDiscovery />} />
               <Route path="/apidetails" element={<ApiDiscoveryDetails />} />
             </Routes>
+         
           </main>
+        
         </div>
+        <Footer />
       </ThemeProvider>
     </ColorModeContext.Provider>
   );

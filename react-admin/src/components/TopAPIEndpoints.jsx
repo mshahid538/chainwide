@@ -73,7 +73,7 @@ const TopAPIEndpoints = () => {
       renderCell: ({
         row: { details } }) => {
           return (
-            <Box width="60%"
+            <Box width="100%"
             m="0 auto"
             p="5px"
             display="flex"

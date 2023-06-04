@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ProSidebar, Menu, MenuItem } from "react-pro-sidebar";
 import 'react-pro-sidebar/dist/css/styles.css';
 import {Box, IconButton, Typography, useTheme} from '@mui/material';
@@ -19,6 +19,7 @@ import CachedIcon from '@mui/icons-material/Cached';
 
 
 const Item = ({ title, to, icon, selected, setSelected }) => {
+  
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);
     return (
@@ -35,12 +36,29 @@ const Item = ({ title, to, icon, selected, setSelected }) => {
       </MenuItem>
     );
   };
+
+
   
     const SideBar = () => {
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);
     const [isCollapsed, setIsCollapsed] = useState(false);
     const [selected, setSelected] = useState("Dashboard");
+    useEffect(() => {
+      const handleResize = () => {
+        if (window.innerWidth <= 1000) {
+          setIsCollapsed(true);
+        } else if(window.innerWidth >= 1100){
+          setIsCollapsed(false);
+        }
+
+      };
+  
+      window.addEventListener("resize", handleResize);
+      return () => {
+        window.removeEventListener("resize", handleResize);
+      };
+    }, []);
   
     return (
       <Box
@@ -140,14 +158,13 @@ const Item = ({ title, to, icon, selected, setSelected }) => {
                 selected={selected}
                 setSelected={setSelected}
               />
-               <Item
-                title="Policies"
-                to="/policies"
+              {/* <Item
+                title="Manage Team"
+                to="/team"
                 icon={<PeopleOutlinedIcon />}
                 selected={selected}
                 setSelected={setSelected}
               />
-              {/*
               <Item
                 title="Contacts Information"
                 to="/contacts"

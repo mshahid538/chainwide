@@ -1,4 +1,4 @@
-import { Box, Button, IconButton, Typography, useTheme } from "@mui/material";
+import { Box, Button, Grid, IconButton, Typography, useTheme } from "@mui/material";
 import { tokens } from "../../theme";
 import { mockTransactions } from "../../data/mockData";
 import DownloadOutlinedIcon from "@mui/icons-material/UploadFileOutlined";
@@ -17,6 +17,7 @@ import GppBadIcon from '@mui/icons-material/GppBad';
 import ApiIcon from '@mui/icons-material/Api';
 import TopAPIEndpoints from "../../components/TopAPIEndpoints";
 import SwaggerUpload from "../../components/Homepage/swaggerFile";
+import ApiEndPoints from "../../components/ApiEndPoints/ApiEndPoints";
 
 const Dashboard = () => {
   const theme = useTheme();
@@ -53,13 +54,39 @@ const Dashboard = () => {
         gap="20px"
       >
         {/* ROW 1 */}
+
         <Box
+  sx={{
+    gridColumn: { xs: 'span 12', sm: 'span 6', md: 'span 4', lg: 'span 3' },
+    backgroundColor: colors.primary[400],
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  }}
+>
+  <Grid container>
+    <Grid item xs={12}>
+      <StatBox
+        title="6"
+        subtitle="Unidentified APIs"
+        progress="0.75"
+        increase="+14%"
+        icon={<ApiIcon sx={{ color: colors.greenAccent[600], fontSize: '30px' }} />}
+      />
+    </Grid>
+  </Grid>
+</Box>
+
+        
+          {/* <Box
           gridColumn="span 3"
           backgroundColor={colors.primary[400]}
           display="flex"
           alignItems="center"
           justifyContent="center"
         >
+          <Grid container>
+          <Grid items lg={4}>
           <StatBox
             title="6"
             subtitle="Unidentified APIs"
@@ -71,14 +98,22 @@ const Dashboard = () => {
               />
             }
           />
-        </Box>
+           </Grid>
+         </Grid>
+        </Box> */}
+         
+       
         <Box
-          gridColumn="span 3"
-          backgroundColor={colors.primary[400]}
-          display="flex"
-          alignItems="center"
-          justifyContent="center"
+          sx={{
+            gridColumn: { xs: 'span 12', sm: 'span 6', md: 'span 4', lg: 'span 3' },
+            backgroundColor: colors.primary[400],
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
         >
+           <Grid container>
+    <Grid item xs={12}>
           <StatBox
             title="7"
             subtitle="OWASP 10 Attacks"
@@ -90,14 +125,20 @@ const Dashboard = () => {
               />
             }
           />
+          </Grid>
+          </Grid>
         </Box>
         <Box
-          gridColumn="span 3"
-          backgroundColor={colors.primary[400]}
-          display="flex"
-          alignItems="center"
-          justifyContent="center"
+          sx={{
+            gridColumn: { xs: 'span 12', sm: 'span 6', md: 'span 4', lg: 'span 3' },
+            backgroundColor: colors.primary[400],
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
         >
+           <Grid container>
+    <Grid item xs={12}>
           <StatBox
             title="7"
             subtitle="Recent Alerts"
@@ -109,14 +150,20 @@ const Dashboard = () => {
               />
             }
           />
+          </Grid>
+          </Grid>
         </Box>
         <Box
-          gridColumn="span 3"
-          backgroundColor={colors.primary[400]}
-          display="flex"
-          alignItems="center"
-          justifyContent="center"
+          sx={{
+            gridColumn: { xs: 'span 12', sm: 'span 6', md: 'span 12', lg: 'span 3' },
+            backgroundColor: colors.primary[400],
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
         >
+           <Grid container>
+    <Grid item xs={12}>
           <StatBox
             title="1,325,134"
             subtitle="Traffic Received"
@@ -128,6 +175,8 @@ const Dashboard = () => {
               />
             }
           />
+          </Grid>
+           </Grid>
         </Box>
 
         {/* ROW 2 */}
@@ -135,6 +184,11 @@ const Dashboard = () => {
           gridColumn="span 6"
           gridRow="span 2"
           backgroundColor={colors.primary[400]}
+          sx={{
+            gridColumn: { xs: 'span 12', sm: 'span 12', md: 'span 12', lg: 'span 8' },
+            backgroundColor: colors.primary[400],
+            
+          }}
         >
           <Box
             mt="25px"
@@ -169,8 +223,21 @@ const Dashboard = () => {
           gridRow="span 2"
           backgroundColor={colors.primary[400]}
           overflow="auto"
+          sx={{
+            gridColumn: { xs: 'span 12', sm: 'span 12', md: 'span 12', lg: 'span 4' },
+            backgroundColor: colors.primary[400],
+            // display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
         >
-          <Box
+          
+          <Grid container>
+            <Grid items lg={12} md={12} sm={12}>
+              <Typography color={colors.grey[100]} variant="h5" fontWeight="600" sx={{display: 'flex', textAlign: 'center' , justifyContent: 'center' , marginTop: '20px'}}>
+              Recent Alerts
+            </Typography>
+            <Box
             display="flex"
             justifyContent="space-between"
             alignItems="center"
@@ -178,9 +245,7 @@ const Dashboard = () => {
             colors={colors.grey[100]}
             p="15px"
           >
-            <Typography color={colors.grey[100]} variant="h5" fontWeight="600">
-              Recent Alerts
-            </Typography>
+            
           </Box>
           {mockTransactions.map((transaction, i) => (
             <Box
@@ -213,12 +278,40 @@ const Dashboard = () => {
               </Box>
             </Box>
           ))}
+            </Grid>
+          </Grid>
+       
         </Box>
-
         
+       
+      
+        <ApiEndPoints />
+        <Box
+          gridColumn="span 6"
+          gridRow="span 2"
+          backgroundColor={colors.primary[400]}
+          overflow="auto"
+          sx={{
+            gridColumn: { xs: 'span 12', sm: 'span 12', md: 'span 12', lg: 'span 12' },
+            backgroundColor: colors.primary[400],
+            // display: 'flex',
+            // alignItems: 'center',
+            // justifyContent: 'center',
+          }}
+        >
+          <Typography color={colors.grey[100]} variant="h5" fontWeight="600" sx={{  margin: '25px'}}>
+          Top Hosts
+            </Typography>
+           <TopApiHosts />
+        </Box>
+      
+        {/* <TopApiHosts /> */}
+        
+
+        {/* Include This */}
         {/* ROW 3 */}
         {/* API Endpoint */}
-        <Box
+        {/* <Box
           gridColumn="span 12"
           gridRow="span 2"
           backgroundColor={colors.primary[400]}
@@ -234,11 +327,12 @@ const Dashboard = () => {
           <Box height="200px">
             <TopAPIEndpoints isDashboard={true} />
           </Box>
-        </Box>
+        </Box> */}
         {/* <Box>
             <SwaggerUpload isDashboard={true}/>
         </Box> */}
-        <Box
+            {/* Include This */}
+        {/* <Box
           gridColumn="span 6"
           gridRow="span 2"
           backgroundColor={colors.primary[400]}
@@ -255,7 +349,7 @@ const Dashboard = () => {
           <Box height="300px">
             <TopApiHosts isDashboard={true} />
           </Box>
-        </Box>
+        </Box> */}
       </Box>
     </Box>
   );
