@@ -63,9 +63,9 @@ function App() {
               <Route path="/apidiscovery" element={<ApiDiscovery />} />
               <Route path="/apidetails" element={<ApiDiscoveryDetails />} />
             </Routes>
-         
+            
           </main>
-        
+          
         </div>
         <Footer />
       </ThemeProvider>

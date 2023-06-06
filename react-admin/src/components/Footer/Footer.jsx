@@ -8,6 +8,7 @@ import Typography from '@mui/material/Typography';
 import InputBase from '@mui/material/InputBase';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
+import { Grid } from '@mui/material';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -54,8 +55,8 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 export default function Footer() {
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="relative"  sx={{backgroundColor:"#141B2D"}}>
+      <Box>
+      <AppBar position="relative"  sx={{backgroundColor:"#141B2D" }}>
         <Toolbar>
           {/* <IconButton
             size="large"
@@ -86,5 +87,7 @@ export default function Footer() {
         </Toolbar>
       </AppBar>
     </Box>
+    
+   
   );
 }

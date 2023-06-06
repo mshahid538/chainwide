@@ -24,10 +24,13 @@ const Dashboard = () => {
   const colors = tokens(theme.palette.mode);
 
   return (
-    <Box m="20px">
+    <Box m="20px"  sx={{width: '100%',gridColumn: { xs: 'span 12', sm: 'span 6', md: 'span 4', lg: 'span 12' , xl:'span 12', '@media screen and (min-width: 1200px)': {
+      justifyContent: 'center',
+    }, } }} >
+      <Box  >
       {/* HEADER */}
-      <Box display="flex" justifyContent="space-between" alignItems="center">
-        <Header title="API VISIBILITY" subtitle="Last 24 hours" />
+      <Box  display="flex" justifyContent="space-between" alignItems="center">
+        <Header title="API VISIBILITY" subtitle="Last 24 hours"  />
         <Box>
           <Button
             sx={{
@@ -36,6 +39,11 @@ const Dashboard = () => {
               fontSize: "14px",
               fontWeight: "bold",
               padding: "10px 20px",
+              '@media screen and (max-width: 600px)': {
+                fontSize: "10px",
+                fontWeight: "bold",
+                padding: "5px 10px",
+              }
             }}
           >
             <DownloadOutlinedIcon sx={{ mr: "15px" }} />
@@ -52,12 +60,17 @@ const Dashboard = () => {
         gridTemplateColumns="repeat(12, 1fr)"
         gridAutoRows="140px"
         gap="20px"
+        sx={{
+          '@media screen and (max-width: 600px)': {
+            gridTemplateColumns:"repeat(12, 1fr)"
+          }
+        }}
       >
         {/* ROW 1 */}
 
         <Box
   sx={{
-    gridColumn: { xs: 'span 12', sm: 'span 6', md: 'span 4', lg: 'span 3' },
+    gridColumn: { xs: 'span 12', sm: 'span 6', md: 'span 4', lg: 'span 3' , },
     backgroundColor: colors.primary[400],
     display: 'flex',
     alignItems: 'center',
@@ -65,7 +78,7 @@ const Dashboard = () => {
   }}
 >
   <Grid container>
-    <Grid item xs={12}>
+    <Grid item xs={12} >
       <StatBox
         title="6"
         subtitle="Unidentified APIs"
@@ -350,6 +363,7 @@ const Dashboard = () => {
             <TopApiHosts isDashboard={true} />
           </Box>
         </Box> */}
+      </Box>
       </Box>
     </Box>
   );

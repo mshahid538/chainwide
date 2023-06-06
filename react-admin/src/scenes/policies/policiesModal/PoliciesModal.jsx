@@ -60,7 +60,7 @@ function PoliciesModal({ open, handleClose }) {
                     mb={2}
                   >
                     <Grid>
-                      <b>Create a Rule</b>
+                      <b>Create Policy</b>
                     </Grid>
                     <Grid>
                       <b onClick={handleClose} className="closeButton">
@@ -79,7 +79,7 @@ function PoliciesModal({ open, handleClose }) {
                       <Grid container>
                         <Grid item sx={2} sm={2} md={2} lg={2}></Grid>
                         <Grid item sx={1.2} sm={1.2} md={1.2} lg={1.2}>
-                          Rule Name
+                          Policy Name
                         </Grid>
                         <Grid item sx={6} sm={6} md={6} lg={6}>
                           <NewInputField />
@@ -125,39 +125,22 @@ function PoliciesModal({ open, handleClose }) {
                               { id: 2, title: "test2" },
                               { id: 3, title: "test3" },
                             ]}
-                            label="first"
+                            label="Condition"
                           />
                         </Grid>
                         <Grid item sx={12} sm={12} md={4} lg={4}>
                           <Dropdown
                             data={[
-                              { id: 4, title: "test4" },
-                              { id: 5, title: "test5" },
-                              { id: 6, title: "test6" },
+                              { id: 7, title: "exists" },
+                              { id: 8, title: "does not exist" },
+                              { id: 9, title: "is" },
+                              { id: 10, title: "is not" },
+                              { id: 11, title: "is one of" },
+                              { id: 12, title: "is not one of" },
+                              
                             ]}
-                            label="second"
-                          />
-                        </Grid>
-                        <Grid item sx={12} sm={12} md={4} lg={4}>
-                          <Dropdown
-                            data={[
-                              { id: 7, title: "test7" },
-                              { id: 8, title: "test8" },
-                              { id: 9, title: "test9" },
-                            ]}
-                            label="third"
-                          />
-                        </Grid>
-
-                        <Grid item sx={12} sm={12} md={4} lg={4}>
-                          <Dropdown
-                            data={[
-                              { id: 7, title: "test7" },
-                              { id: 8, title: "test8" },
-                              { id: 9, title: "test9" },
-                            ]}
-                            label="value"
-                            multiple="true"
+                            // label="Value"
+                            // multiple="false"
                           />
                         </Grid>
                       </Grid>

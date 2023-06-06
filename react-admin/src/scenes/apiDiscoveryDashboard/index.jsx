@@ -24,20 +24,30 @@ const ApiDiscovery = () => {
   const colors = tokens(theme.palette.mode);
 
   return (
-    <Box m="20px">
+    <Box  m="20px"  sx={{width: '110% !important' ,gridColumn: { xs: 'span 12', sm: 'span 6', md: 'span 4', lg: 'span 12' , xl:'span 12', '@media screen and (min-width: 1200px)': {
+      justifyContent: 'center',
+    }, } }}>
+      <Box>
       {/* HEADER */}
       <Box display="flex" justifyContent="space-between" alignItems="center">
         <Header title="API DISCOVERY" subtitle="List of registered and unregistered API that our system identified" />
       </Box>
       <Box
       >
-        <Grid container sx={{ display: 'flex' , justifyContent: 'center'}}>
-          <Grid items lg={8} md={10} sm={6} m={2}>
+        <Grid container >
+          <Grid items lg={6} md={10} sm={6} m={2} >
           <Box
           // gridColumn="span 6"
           // gridRow="span 2"
+          gridTemplateColumns="repeat(12, 1fr)"
           backgroundColor={colors.primary[400]}
           padding="30px"
+          
+          sx={{
+            '@media screen and (min-width: 1200px)': {
+              // width:'500px'
+            }
+          }}
         >
           <Typography
             variant="h5"
@@ -46,7 +56,7 @@ const ApiDiscovery = () => {
           >
             Problems Identified
           </Typography>
-          <Box height="250px" >
+          <Box height="250px"   >
             <PieChart isDashboard={true} />
           </Box>
         </Box>
@@ -54,12 +64,14 @@ const ApiDiscovery = () => {
        
        
         
-          <Grid items lg={8} md={10} sm={6}   m={2}>
+          <Grid items lg={5} md={10} sm={6} m={2}  >
         <Box
           // gridColumn="span 6"
           // gridRow="span 2"
           backgroundColor={colors.primary[400]}
           padding="30px"
+            gridTemplateColumns="repeat(12, 1fr)"
+         
         >
           <Typography
             variant="h5"
@@ -76,8 +88,8 @@ const ApiDiscovery = () => {
     </Grid>
     </Box>
     
-    <Grid container justifyContent="center">
-  <Grid item lg={10} md={8} sm={12}>
+    <Grid container m={2}>
+  <Grid item lg={10} md={8} sm={6}>
     <Box
       marginTop="20px"
       backgroundColor={colors.primary[400]}
@@ -87,7 +99,7 @@ const ApiDiscovery = () => {
         Unidentified APIs
       </Typography>
       <Box>
-        <ApiDiscoveryHostnameList isDashboard={true} />
+        <ApiDiscoveryHostnameList isDashboard={true} style={{height: '100px'}} />
       </Box>
     </Box>
   </Grid>
@@ -132,6 +144,7 @@ const ApiDiscovery = () => {
             <ApiDiscoveryHostnameList isDashboard={true} />
           </Box>
         </Box> */}
+        </Box>
     </Box>
 
     );

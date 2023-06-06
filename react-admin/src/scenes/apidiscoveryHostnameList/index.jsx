@@ -102,11 +102,19 @@ const ApiDiscoveryHostnameList = () => {
       renderCell: ({
         row: { details } }) => {
           return (
-            <Box width="60%"
+            <Box
+            sx={{
+              gridColumn: { xs: 'span 12', sm: 'span 6', md: 'span 4', lg: 'span 3' , },
+              backgroundColor: colors.primary[400],
+           
+              
+             
+            }}
+            width="60%"
             m="0 auto"
             p="5px"
             display="flex"
-            justifyContent="center">
+           >
             <Link to={'/apidetails'}>
               <Button type="submit" color="secondary" variant="contained">
                 Details
